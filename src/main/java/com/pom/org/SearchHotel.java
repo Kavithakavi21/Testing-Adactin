@@ -6,9 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchHotel {
-	
+
+	public SearchHotel(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver2, this);
+	}
+
 	public static WebDriver driver;
-	
+
 	@FindBy(id = "location")
 	private WebElement location;
 
@@ -27,19 +32,32 @@ public class SearchHotel {
 	@FindBy(id = "datepick_out")
 	private WebElement dateout;
 	
-	@FindBy(id="Submit")
-	private WebElement submit;
-		
+	@FindBy(id="adult_room")
+	private WebElement adultroom;
+	
+	public WebElement getAdultroom() {
+		return adultroom;
+	}
+
+	public void setAdultroom(WebElement adultroom) {
+		this.adultroom = adultroom;
+	}
+
+	public WebElement getChildroom() {
+		return childroom;
+	}
+
+	public void setChildroom(WebElement childroom) {
+		this.childroom = childroom;
+	}
+
+	@FindBy(id="child_room")
+	private WebElement childroom;
 	
 
-	public SearchHotel(WebDriver driver2) {
-		this.driver=driver2;
-		PageFactory.initElements(driver2,this );
-	}
-
-	public WebElement getSubmit() {
-		return submit;
-	}
+	@FindBy(id = "Submit")
+	private WebElement submit;
+	
 
 	public WebElement getLocation() {
 		return location;
@@ -65,19 +83,8 @@ public class SearchHotel {
 		return dateout;
 	}
 
-	public WebElement getAdultroom() {
-		return adultroom;
+	public WebElement getSubmit() {
+		return submit;
 	}
-
-	public WebElement getChildroom() {
-		return childroom;
-	}
-
-	@FindBy(id = "adult_room")
-	private WebElement adultroom;
-
-	@FindBy(id = "child_room")
-	private WebElement childroom;
-
 
 }

@@ -91,9 +91,9 @@ public class Base_Class {
 			if (Option.equalsIgnoreCase("byIndex")) {
 				int parseInt = Integer.parseInt(value);
 				sc.selectByIndex(parseInt);
-			} else if (Option == "byValue") {
+			} else if (Option.equalsIgnoreCase("byValue")) {
 				sc.selectByValue(value);
-			} else if (Option == "byVisibleText") {
+			} else if (Option.equalsIgnoreCase("byVisibleText")) {
 				sc.selectByVisibleText(value);
 			} else {
 				System.out.println("Invalid option");
@@ -192,6 +192,4 @@ public class Base_Class {
 		element.clear();
 	}
 
-	
-	}
-
+}
